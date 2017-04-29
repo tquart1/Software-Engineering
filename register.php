@@ -36,7 +36,7 @@ if ($conn->connect_errno)
 	//email initialization
 	$to = $email;
 	$subject = "Verfication Code";
-	$message = "Your E-Mail Verification Code is: " .$verify. " please copy and paste into link below";
+	$message = "Your E-Mail Verification Code is: " .$verify. "<br>" . " please copy and paste into link below: " . "<br>" . "https://afterschoolhours.000webhostapp.com/verification.html";
 	//link goes here. not done yet.
 	$header = "From: no-reply@afterschoolhours.000webhostapp.com";
 	
