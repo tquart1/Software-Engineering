@@ -1,4 +1,5 @@
 //Reset and remember
+//Documentation #3 from code review part 2
 <?php 
 /* Reset your password form, sends reset.php password link */
 require 'db.php';
