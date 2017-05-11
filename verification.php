@@ -1,3 +1,4 @@
+//Verfication must be in-line with whatever credentaials are entered
 <?php
 //database initialization.
 $db_name = "id1296369_software1";
