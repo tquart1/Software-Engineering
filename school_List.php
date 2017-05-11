@@ -10,7 +10,7 @@
 		<p>You may insert, delete, or modify data</p>
 		<div id="controlBox">
 			<div id="insert">
-        <form action="school_List.php" method="post">
+        <form action="school_List2.php" method="post">
 			<fieldset>
 				<legend>INSERT</legend>
 				<p><label class="title" for="schoolid">School ID:</label>
@@ -27,12 +27,19 @@
           <input type="text" name="state" required="required"><br />
           <label class="title" for="zip" required="required">Zip:</label>
           <input type="text" name="zip" required="required"><br />
+					<select name="venueOption">
+						<option value="gym">Gym</option>
+						<option value="audit">Auditorium</option>
+						<option value="cafeteria">Cafeteria</option>
+						<option value="field">Field</option>
+						<option value="playground">Playground</option>
+					</select>
 					<input type="submit" name="add" value="INSERT" />
         </form>
 				</div>
 
 					<div id="update">
-            <form action="school_List.php" method="post">
+            <form action="school_List2.php" method="post">
 					<fieldset>
 						<legend>UPDATE</legend>
             <p><label class="title" for="schoolid">School ID:</label>
@@ -49,12 +56,19 @@
               <input type="text" name="state" required="required"><br />
               <label class="title" for="zip" required="required">Zip:</label>
               <input type="text" name="zip" required="required"><br />
+							<select name="venueOption">
+								<option value="gym">Gym</option>
+								<option value="audit">Auditorium</option>
+								<option value="cafeteria">Cafeteria</option>
+								<option value="field">Field</option>
+								<option value="playground">Playground</option>
+							</select>
 							<input type="submit" name="edit" value="UPDATE" />
             </form>
 						</div>
 
 						<div id="delete">
-              <form action="school_List.php" method="post">
+              <form action="school_List2.php" method="post">
 						<fieldset>
 							<!-- Delete based on primary key -->
 							<legend>Delete</legend>
@@ -75,6 +89,7 @@
        <th>City</th>
        <th>State</th>
        <th>Zip</th>
+			 <th>Venue Type</th>
        </tr>
 <?php
 require_once 'db_connect.php';
@@ -88,9 +103,10 @@ if (isset($_POST["add"]))
   $City = get_post($conn,"city");
   $State = get_post($conn,"state");
   $Zip_Code = get_post($conn,"zip");
+	$vType = get_post($conn,"venueOption");
 
   $query = "INSERT INTO Schools VALUES" .
-    "('$School_Id', '$Name', '$Phone', '$Address', '$City', '$State', '$Zip_Code')";
+    "('$School_Id', '$Name', '$Phone', '$Address', '$City', '$State', '$Zip_Code', '$vType')";
   $result = $conn->query($query);
   if (!$result) echo "INSERT FAILED: $query<br />" . $conn->error;
 }
@@ -104,9 +120,10 @@ else if (isset($_POST["edit"])) {
   $City = $_POST["city"];
   $State = $_POST["state"];
   $Zip_Code = $_POST["zip"];
+	$vType = $_POST['venueOption'];
 
 $query = "UPDATE Schools SET Name='$Name', Phone_Number='$Phone',
-Street_Address='$Address', City='$City', State='$State', Zip_Code='$Zip_Code' WHERE School_Id='$School_Id'";
+Street_Address='$Address', City='$City', State='$State', Zip_Code='$Zip_Code', vType='$vType' WHERE School_Id='$School_Id'";
 $result = $conn->query($query);
 
 }
@@ -133,6 +150,7 @@ for ($j = 0; $j < $rows; ++$j)
   <td>{$row[4]}</td>
   <td>{$row[5]}</td>
   <td>{$row[6]}</td>
+	<td>{$row[7]}</td>
   </tr>";
 }
 
