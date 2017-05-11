@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="css/buttonstyle.css" type="text/css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+  <h1 class="siteLogo">
+    <a href="https://afterschoolhours.000webhostapp.com/"><img src="images/logo.png" title="AfterSchool Hours" alt="Homepage" /></a>
+    </h1>
+
+  <div class="login">
+	<fieldset id="loginForm">
+    <legend id="loginLeg">Login</legend>
+    <form method="post">
+    	<input type="text" name="u" placeholder="Username" required="required" />
+      <input type="password" name="p" placeholder="Password" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Submit
+        </button>
+    </form>
+    <form method="get" action="/signup.html">
+    <button type="submit" class = "btn btn-primary btn-block btn-large">Register</button>
+    </form>
+    <form method="get" action="/forgot.html">
+    <button type="submit" class = "btn btn-primary btn-block btn-large">Forgot Password?</button>
+    </form>
+  </fieldset>
+  </div>
+    <script src="js/index.js"></script>
+
+</body>
+</html>
