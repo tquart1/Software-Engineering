@@ -1,3 +1,4 @@
+//Close session with full reminder that one cannot recover
 <?php
 /* Log out process, unsets and destroys session variables */
 
