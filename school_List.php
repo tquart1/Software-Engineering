@@ -10,7 +10,7 @@
 		<p>You may insert, delete, or modify data</p>
 		<div id="controlBox">
 			<div id="insert">
-        <form action="school_List2.php" method="post">
+        <form action="school_List.php" method="post">
 			<fieldset>
 				<legend>INSERT</legend>
 				<p><label class="title" for="schoolid">School ID:</label>
@@ -39,7 +39,7 @@
 				</div>
 
 					<div id="update">
-            <form action="school_List2.php" method="post">
+            <form action="school_List.php" method="post">
 					<fieldset>
 						<legend>UPDATE</legend>
             <p><label class="title" for="schoolid">School ID:</label>
@@ -68,7 +68,7 @@
 						</div>
 
 						<div id="delete">
-              <form action="school_List2.php" method="post">
+              <form action="school_List.php" method="post">
 						<fieldset>
 							<!-- Delete based on primary key -->
 							<legend>Delete</legend>
