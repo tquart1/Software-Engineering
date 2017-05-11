@@ -1,5 +1,7 @@
 <?php
-/* Displays all error messages */
+/* Displays all error messages to the screen
+when needed for a session */
+
 session_start();
 ?>
 <!DOCTYPE html>

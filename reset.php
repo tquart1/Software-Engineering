@@ -16,11 +16,13 @@ if( isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && 
 
     if ( $result->num_rows == 0 )
     { 
+        // The url does not match the url emailed to the user so the password reset fails
         $_SESSION['message'] = "You have entered invalid URL for password reset!";
         header("location: error.php");
     }
 }
 else {
+   // Emails do not match so password reset fails and error message is displayed
     $_SESSION['message'] = "Sorry, verification failed, try again!";
     header("location: error.php");  
 }

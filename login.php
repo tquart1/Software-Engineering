@@ -12,6 +12,8 @@ if ( $result->num_rows == 0 ){ // User doesn't exist
 else { // User exists
     $user = $result->fetch_assoc();
 
+    // Password in post variable matches the users password allowing 
+    // the user to be logged in
     if ( password_verify($_POST['password'], $user['password']) ) {
         
         $_SESSION['email'] = $user['email'];
@@ -25,6 +27,7 @@ else { // User exists
         header("location: profile.php");
     }
     else {
+        // Passwords do not match and error message is displayed
         $_SESSION['message'] = "You have entered wrong password, try again!";
         header("location: error.php");
     }

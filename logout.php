@@ -1,6 +1,10 @@
 <?php
 /* Log out process, unsets and destroys session variables */
 
+/* Begins the logout process by unsetting the session varaibles and destroying the session.
+   Displays a log out message to the screen
+*/
+
 session_start();
 session_unset();
 session_destroy(); 
