@@ -1,5 +1,8 @@
 <?php
 /* Log out process, unsets and destroys session variables */
+/* Log out process, unsets and destroys session variables */
+/* Log out process, unsets and destroys session variables */
+
 session_start();
 session_unset();
 session_destroy(); 
@@ -13,6 +16,7 @@ session_destroy();
 </head>
 
 <body>
+	<!-- Successful Log Out -->
     <div class="form">
           <h1>Thanks for stopping by</h1>
               
