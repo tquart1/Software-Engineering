@@ -1,12 +1,5 @@
 <?php
-//database initialization.
-$db_name = "u341414993_proj1";
-$db_host = "mysql.hostinger.com";
-$db_user = "u341414993_rspur";
-$db_pw = "cosc455";
-
-//Create connection
-$conn = new mysqli($db_host, $db_user, $db_pw, $db_name);
+require 'database-connection.php'
 
 //Check connection
 if ($conn->connect_errno) 
