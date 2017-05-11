@@ -1,5 +1,5 @@
 <?php
-/* Database connection settings */
+/* Website atabase connection settings */
 $host = 'mysql.hostinger.com';
 $user = 'u341414993_rspur';
 $pass = 'Cosc412';
