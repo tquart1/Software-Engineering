@@ -2,6 +2,7 @@
 	require 'database-connection.php';
 	
 	$message = '';
+	$success = '';
 	$pw = '';
 	$email = ' ';
 	
@@ -79,7 +80,7 @@
 				if( $stmt->execute() )
 				{
 					mail ($to, $subject, $body, $header);
-					$message = 'Success, please check your email for a verification code.';
+					$success = 'Success, please check your email for a verification code.';
 				} else
 				{
 					$message = 'Sorry there seems to be a problem, please try again!';
@@ -111,7 +112,10 @@
 	
 	
 	<?php if(!empty($message)): ?>
-	<center>	<p><?= $message ?></p> </center>
+	<center><p stlyle="color:red;"><?= $message ?></p> </center>
+	<?php endif; ?>
+	<?php if(!empty($success)):?>
+	<center><p stlyle="color:green;"><?= $success ?></p> </center>
 	<?php endif; ?>
 
 	
